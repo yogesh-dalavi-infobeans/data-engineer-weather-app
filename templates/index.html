@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Weather Dashboard</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+        .data { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        .data th, .data td { padding: 8px; border: 1px solid #ccc; text-align: center; }
+        .data th { background-color: #333; color: white; }
+        img { margin-top: 20px; width: 100%; max-width: 800px; }
+        .filter-buttons { margin-bottom: 20px; }
+        .filter-buttons a {
+            padding: 8px 16px;
+            background: #4CAF50;
+            color: white;
+            margin-right: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .filter-buttons a.selected { background: #2e7d32; }
+    </style>
+</head>
+<body>
+    <h1>Kolhapur Daily Weather Dashboard</h1>
+
+    <div class="filter-buttons">
+        <a href="?filter=7days" class="{% if selected_filter == '7days' %}selected{% endif %}">Last 7 Days</a>
+        <a href="?filter=30days" class="{% if selected_filter == '30days' %}selected{% endif %}">Last 30 Days</a>
+        <a href="/" class="{% if selected_filter == 'all' %}selected{% endif %}">All Data</a>
+    </div>
+
+    {{ table|safe }}
+
+    <img src="{% static chart %}" alt="Weather Chart">
+</body>
+</html>
