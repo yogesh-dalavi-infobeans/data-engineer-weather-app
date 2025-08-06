@@ -1,6 +1,6 @@
 # 🌦️ Weather Data Science Dashboard
 
-A Python-Django application that collects daily weather data for **Kolhapur** using the free **Open-Meteo API**, stores it in **MySQL**, and displays the data in a clean web-based dashboard with charts and filters.
+A Python-Django application that collects daily weather data for **Pune** using the free **Open-Meteo API**, stores it in **MySQL**, and displays the data in a clean web-based dashboard with charts and filters.
 
 ---
 
